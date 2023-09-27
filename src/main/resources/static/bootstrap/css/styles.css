@@ -1,0 +1,63 @@
+/*Só para efeito de consulta dos códigos*/
+.paleta-de-cores {
+    --mycolor-custom-primary: #004225;
+    --mycolor-custom-secondary: #F5F5DC;
+    --mycolor-custom-tertiary: #FFB000;
+    --mycolor-custom-quaternary: #FFCF9D;
+}
+
+body {
+    background-color: #FFCF9D;
+}
+
+.body-modal {
+    background-color: #F5F5DC;
+}
+
+.navbar-bg-custom {
+    background-color: #004225;
+}
+
+.navbar-nav {
+    --bs-nav-link-color: #F5F5DC;
+    --bs-nav-link-hover-color: #FFCF9D;
+    --bs-nav-link-disabled-color: #BBBBBB;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: #FFCF9D;
+    font-weight: 500;
+}
+
+.btn-color-custom {
+    border: none;
+    --bs-btn-color: #004225;
+    --bs-btn-bg: #F5F5DC;
+    --bs-btn-hover-color: #004225;
+    --bs-btn-hover-bg: #FFCF9D;
+    --bs-btn-hover-border-color: #004225;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
+    --bs-btn-active-color: #004225;
+    --bs-btn-active-bg: #FFB000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #6c757d;
+}
+
+.form-control-search-custom {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #004225;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #F5F5DC;
+    background-clip: padding-box;
+    border: none;
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
