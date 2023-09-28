@@ -1,10 +1,9 @@
 package br.com.m4systems.myinventory.controller;
 
 import br.com.m4systems.myinventory.dto.MaterialDTO;
-import br.com.m4systems.myinventory.entity.Material;
+import br.com.m4systems.myinventory.entity.MaterialEntity;
 import br.com.m4systems.myinventory.service.MaterialService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,7 +23,7 @@ public class MaterialController {
 
     @GetMapping("/listar")
     public String listarMaterial(Model model) {
-        List<Material> materiais = materialService.listarMaterial();
+        List<MaterialEntity> materiais = materialService.listarMaterial();
         model.addAttribute("materiais", materiais);
         return "lista-materiais"; //Nome do template HTML para listar material
     }

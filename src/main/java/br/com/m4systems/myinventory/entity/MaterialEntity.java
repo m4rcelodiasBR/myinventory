@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Material {
+public class MaterialEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,9 +19,9 @@ public class Material {
     private String incumbencia;
     private boolean ativo;
 
-    public Material() {}
+    public MaterialEntity() {}
 
-    public Material(String numPat, String nome, String descricao, String numeroSerie, String marca, String local, String incumbencia, boolean ativo) {
+    public MaterialEntity(String numPat, String nome, String descricao, String numeroSerie, String marca, String local, String incumbencia, boolean ativo) {
         this.numPat = numPat;
         this.nome = nome;
         this.descricao = descricao;
