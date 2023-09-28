@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Inventory - Login</title>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/bootstrap/icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../static/bootstrap/css/styles.css">
+    <link rel="stylesheet" href="../../static/bootstrap/css/fonts.css">
+</head>
+<body>
+<header class="navbar-bg-custom bg-gradient text-white text-center py-4">
+    <h1>My Inventory</h1>
+    <i class="bi bi-database"></i> Versão 1.0
+</header>
+<div class="container mt-4">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card border-0">
+                <div class="card-header navbar-bg-custom bg-gradient text-white py-3 fs-5 text-center"><i class="bi bi-person"></i> Faça Login</div>
+                <div class="card-body">
+                    <form action="/login" method="post">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Login</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Senha">
+                            <label for="floatingPassword">Senha</label>
+                        </div>
+                        <div class="mt-3 d-grid gap-2 col-3 mx-auto">
+                            <button class="btn btn-primary" type="submit">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-white text-center py-3 fixed-bottom">
+    <p>2023 <i class="bi bi-c-circle"></i> M4 Systems - My Inventory. Todos os direitos reservados.</p>
+</footer>
+<script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
