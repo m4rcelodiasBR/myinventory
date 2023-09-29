@@ -23,7 +23,7 @@ public class MaterialService {
                 materialDTO.getNumeroSerie(),
                 materialDTO.getMarca(),
                 materialDTO.getLocal(),
-                materialDTO.getIncumbencia(),
+                materialDTO.getCompartimento(),
                 materialDTO.isAtivo()
                 );
         materialRepository.save(materialEntity);

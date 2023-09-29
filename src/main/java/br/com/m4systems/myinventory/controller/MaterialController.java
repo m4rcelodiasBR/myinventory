@@ -16,25 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/materiais")
 public class MaterialController {
     @Autowired
     private MaterialService materialService;
 
     @GetMapping("/listar")
     public String listarMaterial(Model model) {
-        List<MaterialEntity> materiais = materialService.listarMaterial();
-        model.addAttribute("materiais", materiais);
-        return "lista-materiais"; //Nome do template HTML para listar material
+//        List<MaterialEntity> materiais = materialService.listarMaterial();
+//        model.addAttribute("materiais", materiais);
+        return "materiais/lista-materiais"; //Nome do template HTML para listar material
+    }
+
+    @GetMapping("/novo")
+    public String abrirPaginaNovoMaterial() {
+        return "materiais/novo-material";
     }
 
     @PostMapping("/novo")
     public String criarMaterial(@ModelAttribute("materialDTO") @Validated MaterialDTO materialDTO, BindingResult result) {
         if (result.hasErrors()) {
-            return "form-material"; // Nome do template HTML do formulário de criação
+            return "materiais/novo-material"; // Nome do template HTML do formulário de criação
         }
         materialService.criarMaterial(materialDTO);
-        return "redirect:/materiais"; // Redireciona para a lista de materiais após a criação
+        return "redirect:/materiais/lista-materiais"; // Redireciona para a lista de materiais após a criação
     }
 
 }

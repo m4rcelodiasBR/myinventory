@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{layout :: head}">
+    <title>Cadastro de Material</title>
+</head>
+<body>
+<header>
+    <div th:replace="~{layout :: nav}"></div>
+</header>
+<main class="container mt-4">
+    <h1>Novo Material</h1>
+    <p>Preencha o formulário abaixo. Verifique os campos obrigatórios.</p>
+    <form action="/materiais/novo" method="post" th:object="${materialDTO}">
+        <div class="form-floating mb-3">
+            <input class="form-control" type="number" id="numPat" name="numPat" th:field="*{numPat}" placeholder="Número Patrimonial" required>
+            <label for="numPat">Número Patrimonial</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" id="nome" name="nome" th:field="*{nome}" placeholder="Nome" required>
+            <label for="nome">Nome</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" id="descricao" name="descricao" th:field="*{descricao}" placeholder="Descrição" required>
+            <label for="descricao">Descrição</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" id="numeroSerie" name="numeroSerie" th:field="*{numeroSerie}" placeholder="Número de Série">
+            <label for="numeroSerie">Número de Série</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" id="marca" name="marca" th:field="*{marca}" placeholder="Marca">
+            <label for="marca">Marca</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" id="local" name="local" th:field="*{local}" placeholder="Local">
+            <label for="local">Local</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" id="compartimento" name="compartimento" th:field="*{compartimento}" placeholder="Compartimento">
+            <label for="compartimento">Incumbência</label>
+        </div>
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="ativo" th:field="*{ativo}">
+            <label class="form-check-label" for="ativo">Ativo</label>
+        </div>
+        <input type="submit" value="Cadastrar">
+    </form>
+</main>
+<div th:replace="~{layout :: footer}"></div>
+<div th:replace="~{layout :: canvas_modais_scripts}"></div>
+</body>
+</html>

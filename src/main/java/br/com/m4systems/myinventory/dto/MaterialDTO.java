@@ -1,30 +1,28 @@
 package br.com.m4systems.myinventory.dto;
 
-import br.com.m4systems.myinventory.repository.MaterialRepository;
-
 public class MaterialDTO {
 
-    private String numPat;
+    private int numPat;
     private String nome;
     private String descricao;
     private String numeroSerie;
     private String marca;
     private String local;
-    private String incumbencia;
+    private String compartimento;
     private boolean ativo;
 
-    public MaterialDTO(String numPat, String nome, String descricao, String numeroSerie, String marca, String local, String incumbencia, boolean ativo) {
+    public MaterialDTO(int numPat, String nome, String descricao, String numeroSerie, String marca, String local, String compartimento, boolean ativo) {
         this.numPat = numPat;
         this.nome = nome;
         this.descricao = descricao;
         this.numeroSerie = numeroSerie;
         this.marca = marca;
         this.local = local;
-        this.incumbencia = incumbencia;
+        this.compartimento = compartimento;
         this.ativo = ativo;
     }
 
-    public String getNumPat() {
+    public int getNumPat() {
         return numPat;
     }
 
@@ -48,8 +46,8 @@ public class MaterialDTO {
         return local;
     }
 
-    public String getIncumbencia() {
-        return incumbencia;
+    public String getCompartimento() {
+        return compartimento;
     }
 
     public boolean isAtivo() {

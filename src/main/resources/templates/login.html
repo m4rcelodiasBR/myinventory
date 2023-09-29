@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Inventory - Login</title>
-    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../static/bootstrap/icons/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../../static/bootstrap/css/styles.css">
-    <link rel="stylesheet" href="../../static/bootstrap/css/fonts.css">
+<head th:replace="~{layout :: head}">
+    <title>Login</title>
 </head>
 <body>
 <header class="navbar-bg-custom bg-gradient text-white text-center py-4">
@@ -39,9 +32,7 @@
         </div>
     </div>
 </div>
-<footer class="bg-dark text-white text-center py-3 fixed-bottom">
-    <p>2023 <i class="bi bi-c-circle"></i> M4 Systems - My Inventory. Todos os direitos reservados.</p>
-</footer>
-<script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+<div th:replace="~{layout :: footer}"></div>
+<div th:replace="~{layout :: canvas_modais_scripts}"></div>
 </body>
 </html>

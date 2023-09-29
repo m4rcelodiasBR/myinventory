@@ -10,7 +10,7 @@ public class MaterialEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String numPat;
+    private int numPat;
     private String nome;
     private String descricao;
     private String numeroSerie;
@@ -21,7 +21,7 @@ public class MaterialEntity {
 
     public MaterialEntity() {}
 
-    public MaterialEntity(String numPat, String nome, String descricao, String numeroSerie, String marca, String local, String incumbencia, boolean ativo) {
+    public MaterialEntity(int numPat, String nome, String descricao, String numeroSerie, String marca, String local, String incumbencia, boolean ativo) {
         this.numPat = numPat;
         this.nome = nome;
         this.descricao = descricao;

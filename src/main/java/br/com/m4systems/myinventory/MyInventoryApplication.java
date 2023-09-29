@@ -1,4 +1,4 @@
-package br.com.m4systems.myinventory.main;
+package br.com.m4systems.myinventory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
