@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head th:replace="~{layout :: head}">
     <title>Cadastro de Material</title>
 </head>
@@ -10,7 +10,7 @@
 <main class="container mt-4">
     <h1>Novo Material</h1>
     <p>Preencha o formulário abaixo. Verifique os campos obrigatórios.</p>
-    <form action="/materiais/novo" method="post" th:object="${materialDTO}">
+    <form action="/novo" method="post" th:object="${materialDTO}">
         <div class="form-floating mb-3">
             <input class="form-control" type="number" id="numPat" name="numPat" th:field="*{numPat}" placeholder="Número Patrimonial" required>
             <label for="numPat">Número Patrimonial</label>
@@ -37,13 +37,15 @@
         </div>
         <div class="form-floating mb-3">
             <input class="form-control" type="text" id="compartimento" name="compartimento" th:field="*{compartimento}" placeholder="Compartimento">
-            <label for="compartimento">Incumbência</label>
+            <label for="compartimento">Compartimento</label>
         </div>
         <div class="form-check form-switch mb-3">
             <input class="form-check-input" type="checkbox" role="switch" id="ativo" th:field="*{ativo}">
             <label class="form-check-label" for="ativo">Ativo</label>
         </div>
-        <input type="submit" value="Cadastrar">
+        <div class="my-3 d-grid gap-2 col-3 mx-auto">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </div>
     </form>
 </main>
 <div th:replace="~{layout :: footer}"></div>

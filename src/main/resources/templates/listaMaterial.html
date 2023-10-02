@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{layout :: head}">
+    <title>Lista de Materiais cadastrados</title>
+</head>
+<body>
+<header>
+    <div th:replace="~{layout :: nav}"></div>
+</header>
+<main>
+    <h2>Materiais Cadastrados</h2>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>NumPat</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Número de Série</th>
+            <th>Marca</th>
+            <th>Local</th>
+            <th>Compartimento</th>
+        </tr>
+        <tbody>
+        <tr th:each="material : ${materiais}">
+            <td th:text="${material.numPat}"></td>
+            <td th:text="${material.nome}"></td>
+            <td th:text="${material.descricao}"></td>
+            <td th:text="${material.numeroSerie}"></td>
+            <td th:text="${material.marca}"></td>
+            <td th:text="${material.local}"></td>
+            <td th:text="${material.compartimento}"></td>
+        </tr>
+        </tbody>
+        </thead>
+    </table>
+</main>
+</body>
+</html>

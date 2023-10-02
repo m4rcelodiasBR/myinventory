@@ -3,7 +3,7 @@ package br.com.m4systems.myinventory.entity;
 import jakarta.persistence.*;
 
 @Entity
-public class UsuarioEntity {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

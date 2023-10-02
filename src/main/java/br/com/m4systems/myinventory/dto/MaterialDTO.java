@@ -1,17 +1,21 @@
 package br.com.m4systems.myinventory.dto;
 
+
 public class MaterialDTO {
 
-    private int numPat;
+    private Integer numPat;
     private String nome;
     private String descricao;
     private String numeroSerie;
     private String marca;
     private String local;
     private String compartimento;
-    private boolean ativo;
+    private Boolean ativo;
 
-    public MaterialDTO(int numPat, String nome, String descricao, String numeroSerie, String marca, String local, String compartimento, boolean ativo) {
+    public MaterialDTO() {
+    }
+
+    public MaterialDTO(Integer numPat, String nome, String descricao, String numeroSerie, String marca, String local, String compartimento, Boolean ativo) {
         this.numPat = numPat;
         this.nome = nome;
         this.descricao = descricao;
@@ -22,7 +26,7 @@ public class MaterialDTO {
         this.ativo = ativo;
     }
 
-    public int getNumPat() {
+    public Integer getNumPat() {
         return numPat;
     }
 
@@ -50,7 +54,43 @@ public class MaterialDTO {
         return compartimento;
     }
 
-    public boolean isAtivo() {
+    public Boolean getAtivo() {
         return ativo;
+    }
+
+    public String getAtivoAsString() {
+        return ativo ? "ATIVO" : "INATIVO";
+    }
+
+    public void setNumPat(Integer numPat) {
+        this.numPat = numPat;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
+    public void setCompartimento(String compartimento) {
+        this.compartimento = compartimento;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
 }
