@@ -18,16 +18,15 @@ public class MaterialService {
     }
 
     public void criarMaterial(MaterialDTO materialDTO) {
-        Material materialEntity = new Material(
-                materialDTO.getNumPat(),
-                materialDTO.getNome(),
-                materialDTO.getDescricao(),
-                materialDTO.getNumeroSerie(),
-                materialDTO.getMarca(),
-                materialDTO.getLocal(),
-                materialDTO.getCompartimento(),
-                materialDTO.getAtivo()
-                );
-        materialRepository.save(materialEntity);
+        Material material = new Material();
+                material.setNumPat(materialDTO.getNumPat());
+                material.setNome(materialDTO.getNome());
+                material.setDescricao(materialDTO.getDescricao());
+                material.setNumeroSerie(materialDTO.getNumeroSerie());
+                material.setMarca(materialDTO.getNumeroSerie());
+                material.setLocal(materialDTO.getLocal());
+                material.setCompartimento(material.getCompartimento());
+                material.setAtivo(material.getAtivo());
+        materialRepository.save(material);
     }
 }

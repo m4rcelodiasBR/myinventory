@@ -10,7 +10,7 @@
 <main class="container mt-4">
     <h1>Novo Material</h1>
     <p>Preencha o formulário abaixo. Verifique os campos obrigatórios.</p>
-    <form action="/novo" method="post" th:object="${materialDTO}">
+    <form action="/material/listar" method="post" th:object="${materialDTO}">
         <div class="form-floating mb-3">
             <input class="form-control" type="number" id="numPat" name="numPat" th:field="*{numPat}" placeholder="Número Patrimonial" required>
             <label for="numPat">Número Patrimonial</label>

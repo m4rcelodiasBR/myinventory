@@ -39,13 +39,13 @@ public class MaterialController {
     }
 
     @PostMapping("novo")
-    public ModelAndView criarMaterial(@ModelAttribute("materialDTO") @Validated MaterialDTO materialDTO, @NotNull BindingResult result) {
+    public ModelAndView criarMaterial(@ModelAttribute("materialDTO") MaterialDTO materialDTO, @NotNull BindingResult result) {
         ModelAndView mv = new ModelAndView();
         if (result.hasErrors()) {
             mv.setViewName("novoMaterialForm");
         } else {
             materialService.criarMaterial(materialDTO);
-            mv.setViewName("redirect:listaMaterial");
+            mv.setViewName("redirect:/material/listar");
         }
         return mv;
     }

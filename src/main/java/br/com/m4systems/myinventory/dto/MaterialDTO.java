@@ -12,20 +12,6 @@ public class MaterialDTO {
     private String compartimento;
     private Boolean ativo;
 
-    public MaterialDTO() {
-    }
-
-    public MaterialDTO(Integer numPat, String nome, String descricao, String numeroSerie, String marca, String local, String compartimento, Boolean ativo) {
-        this.numPat = numPat;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.numeroSerie = numeroSerie;
-        this.marca = marca;
-        this.local = local;
-        this.compartimento = compartimento;
-        this.ativo = ativo;
-    }
-
     public Integer getNumPat() {
         return numPat;
     }
@@ -56,10 +42,6 @@ public class MaterialDTO {
 
     public Boolean getAtivo() {
         return ativo;
-    }
-
-    public String getAtivoAsString() {
-        return ativo ? "ATIVO" : "INATIVO";
     }
 
     public void setNumPat(Integer numPat) {
