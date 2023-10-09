@@ -8,9 +8,13 @@
     <div th:replace="~{layout :: nav}"></div>
 </header>
 <main class="container mt-4">
-    <h1>Novo Material</h1>
+    <h1>Editar Material</h1>
     <p>Preencha o formulário abaixo. Verifique os campos obrigatórios.</p>
-    <form action="/material/listar" method="post" th:object="${materialDTO}">
+    <form action="/material/editar" method="post" th:object="${materialDTO}">
+        <div class="form-floating mb-3">
+            <input class="form-control" type="hidden" id="id" name="id" th:field="*{id}">
+            <p class="fw-bold" th:text="'Material ID: ' + *{id}"></p>
+        </div>
         <div class="form-floating mb-3">
             <input class="form-control" type="number" id="numPat" name="numPat" th:field="*{numPat}" placeholder="Número Patrimonial" required>
             <label for="numPat">Número Patrimonial</label>
@@ -32,7 +36,7 @@
             <label for="marca">Marca</label>
         </div>
         <div class="form-floating mb-3">
-            <input class="form-control" type="text" id="local" name="local" th:field="*{local}" placeholder="Local">
+            <input class="form-control" type="text" id="local" name="local" th:field="*{localizacao}" placeholder="Local">
             <label for="local">Local</label>
         </div>
         <div class="form-floating mb-3">
@@ -44,11 +48,12 @@
             <label class="form-check-label" for="ativo">Ativo</label>
         </div>
         <div class="my-3 d-grid gap-2 col-3 mx-auto">
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
+            <button class="btn btn-primary" type="submit">Salvar</button>
         </div>
     </form>
 </main>
 <div th:replace="~{layout :: footer}"></div>
-<div th:replace="~{layout :: canvas_modais_scripts}"></div>
+<div th:replace="~{layout :: canvas_modais}"></div>
+<div th:replace="~{layout :: scripts}"></div>
 </body>
 </html>

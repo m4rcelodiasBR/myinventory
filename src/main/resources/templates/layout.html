@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item px-2">
-                        <a class="nav-link text-center" aria-current="page" href="#"><i
+                        <a class="nav-link text-center" aria-current="page" href="/home"><i
                                 class="bi bi-house fs-5"></i><br>Home</a>
                     </li>
                     <li class="nav-item px-2">
@@ -55,7 +55,7 @@
 </footer>
 
 
-<div th:fragment="canvas_modais_scripts">
+<div th:fragment="canvas_modais">
     <!--Canvas-->
     <div class="offcanvas offcanvas-end navbar-bg-custom bg-gradient text-white ps-2" tabindex="-1" id="menuMaterial"
          aria-labelledby="offcanvasRightLabel">
@@ -67,18 +67,10 @@
         <div class="offcanvas-body">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li>
-                    <a class="nav-link fs-5 py-3" aria-current="page" th:href="@{material/listar}"><i class="bi bi-list"></i> Listar</a>
+                    <a class="nav-link fs-5 py-3" aria-current="page" href="/material/listar"><i class="bi bi-list"></i> Listar</a>
                 </li>
                 <li>
-                    <a class="nav-link fs-5 py-3" aria-current="page" th:href="@{material/novo}"><i class="bi bi-plus-circle"></i> Incluir</a>
-                </li>
-                <li>
-                    <a class="nav-link fs-5 py-3" aria-current="page" href="#"><i class="bi bi-pencil-square"></i>
-                        Editar</a>
-                </li>
-                <li>
-                    <a class="nav-link fs-5 py-3" aria-current="page" href="#"><i class="bi bi-x-circle"></i>
-                        Excluir</a>
+                    <a class="nav-link fs-5 py-3" aria-current="page" href="/material/novo"><i class="bi bi-plus-circle"></i> Incluir</a>
                 </li>
             </ul>
         </div>
@@ -97,14 +89,6 @@
                 </li>
                 <li>
                     <a class="nav-link fs-5 py-3" aria-current="page" href="#"><i class="bi bi-person-add"></i> Incluir</a>
-                </li>
-                <li>
-                    <a class="nav-link fs-5 py-3" aria-current="page" href="#"><i class="bi bi-person-fill-gear"></i>
-                        Editar</a>
-                </li>
-                <li>
-                    <a class="nav-link fs-5 py-3" aria-current="page" href="#"><i class="bi bi-person-fill-x"></i>
-                        Excluir</a>
                 </li>
             </ul>
         </div>
@@ -129,6 +113,8 @@
             </div>
         </div>
     </div>
+</div>
+<div th:fragment="scripts">
     <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
 </div>
 </body>

@@ -1,5 +1,6 @@
 package br.com.m4systems.myinventory.entity;
 
+import br.com.m4systems.myinventory.dto.MaterialDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,11 +16,25 @@ public class Material {
     private String descricao;
     private String numeroSerie;
     private String marca;
-    private String local;
+    private String localizacao;
     private String compartimento;
     private Boolean ativo;
 
-    public Material() {}
+    public Material() {
+
+    }
+
+    public Material(MaterialDTO materialDTO) {
+        this.id = materialDTO.getId();
+        this.numPat = materialDTO.getNumPat();
+        this.nome = materialDTO.getNome();
+        this.descricao = materialDTO.getDescricao();
+        this.numeroSerie = materialDTO.getNumeroSerie();
+        this.marca = materialDTO.getMarca();
+        this.localizacao = materialDTO.getLocalizacao();
+        this.compartimento = materialDTO.getCompartimento();
+        this.ativo = materialDTO.getAtivo();
+    }
 
     public Integer getNumPat() {
         return numPat;
@@ -61,20 +76,20 @@ public class Material {
         this.marca = marca;
     }
 
-    public String getLocal() {
-        return local;
+    public String getLocalizacao() {
+        return localizacao;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
     }
 
     public String getCompartimento() {
         return compartimento;
     }
 
-    public void setCompartimento(String incumbencia) {
-        this.compartimento = incumbencia;
+    public void setCompartimento(String compartimento) {
+        this.compartimento = compartimento;
     }
 
     public Boolean getAtivo() {
@@ -83,6 +98,14 @@ public class Material {
 
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
 

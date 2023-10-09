@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{layout :: head}">
+    <title>Lista de Materiais cadastrados</title>
+</head>
+<body>
+<header>
+    <div th:replace="~{layout :: nav}"></div>
+</header>
+<main>
+    <div class="container-fluid">
+        <h2>Materiais Cadastrados</h2>
+        <table class="table table-hover table-responsive text-center">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>NumPat</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Número de Série</th>
+                <th>Marca</th>
+                <th>Localização</th>
+                <th>Compartimento</th>
+                <th>Ativo</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="material : ${materiais}">
+                <td th:text="${material.id}"></td>
+                <td th:text="${material.numPat}"></td>
+                <td th:text="${material.nome}"></td>
+                <td th:text="${material.descricao}"></td>
+                <td th:text="${material.numeroSerie}"></td>
+                <td th:text="${material.marca}"></td>
+                <td th:text="${material.localizacao}"></td>
+                <td th:text="${material.compartimento}"></td>
+                <td th:text="${material.ativo}"></td>
+                <td class="text-center">
+                    <div class="grid">
+                        <a th:href="@{/material/editar(id = ${material.id})}" class="btn btn-primary fw-bold">
+                            <i class="color-bi bi-pencil-square"></i>
+                        </a>
+                        <button type="button" class="btn btn-warning fw-bold">
+                            <i class="bi bi-info-square"></i>
+                        </button>
+                        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmarExclusao">
+                            <i class="color-bi bi-x-square"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<div th:replace="~{layout :: footer}"></div>
+<div th:replace="~{layout :: canvas_modais}"></div>
+<div class="modal fade" id="confirmarExclusao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content body-modal">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Excluir Material</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p th:text="'Deseja realmente excluir o material com o Número Patrimonial: ' + ${material.numPat}"></p>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-success" th:href="@{/material/excluir(id = ${material.id})}">Sim</a>
+                <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Não</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="~{layout :: scripts}"></div>
+</body>
+</html>
